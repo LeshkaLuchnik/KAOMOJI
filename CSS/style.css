@@ -96,6 +96,10 @@ main
     width: 100%;
     min-height: calc(100vh - 320px);
 
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
     margin: 10px auto;
 }
 
@@ -181,7 +185,19 @@ footer p
 
 
 
+.Smile
+{
+    width: fit-content;
+    height: fit-content;
 
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+
+    padding: 20px;
+
+}
 
 
 /* Общие CSS стили */

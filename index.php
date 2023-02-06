@@ -28,7 +28,7 @@
                 foreach($result as $row)
                         {
                             echo "<div class = 'Smile'>";
-                                echo '<p id="' . $row["ID"] . '" ">' . $row["Smile"] .'</p>' ;  
+                                echo '<p id="' . $row["ID"] . '" onclick="copy(' . $row["ID"] . ') ">' . $row["Smile"] .'</p>' ;  
                             echo "</div>";
                             
                         }
