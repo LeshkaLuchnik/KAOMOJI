@@ -5,23 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="shortcut icon" href="IMG/icons/flaticon/ascii.png" type="image/x-icon">
 
-    <?php
-        require_once "widget/links.php";
-    ?>
     <title>KAOMOJI</title>
 </head>
 <body>
     <header>
         <?php
-            require_once "widget/header.php";
+            include_once "widget/header.php";
         ?>
     </header>
 
     <main>
        <?php
-            require_once "PHP/connect.php";
+            include_once "PHP/connect.php";
             $connect = connect();
             $sql = "SELECT * FROM smiles";
 
@@ -30,8 +28,9 @@
                 foreach($result as $row)
                         {
                             echo "<div class = 'Smile'>";
-                                echo "<p>Название: " . $row['Smile'] . "</p>";
-                            $count++;
+                                echo '<p id="' . $row["ID"] . '" ">' . $row["Smile"] .'</p>' ;  
+                            echo "</div>";
+                            
                         }
             }
        ?>
@@ -39,11 +38,11 @@
 
     <footer>
         <?php
-            require_once "widget/footer.php";
+            include_once "widget/footer.php";
         ?>    
     </footer>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="JS/script.js"></script>
 </body>
 </html>
