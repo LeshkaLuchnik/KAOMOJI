@@ -24,83 +24,34 @@ header
 {
     width: 100%;
     height: 100px;
-
-    display: flex;
-
-    font-size: 30px;
 }
-
-header a
-{
-    width: 100%;
-    height: 100%;
-
-    text-decoration: none;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
- 
-    transition: all 0.5s ease; 
-}
-
-header a p
-{
-    width: fit-content;
-    height: fit-content;
-
-    border: none;
-
-    transition: all 0.5s ease; 
-}
-
-
-header a:hover
-{
-    background-color: #111;
-}
-
-header a:hover p
-{
-    color: #FFF;
-}
-
 
 header p
 {
-    width: 10%;
+    width: fit-content;
+    height: 100px;
 
     border: 5px solid black;
 
-    padding: 5px;
+    margin: auto;
+    padding: 10px;
 
+    font-size: 35px;
+    font-weight: bold;
     text-align: center;
-    line-height: 1.2;
+    vertical-align: middle;
 }
-
-header div
-{
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-
-
 
 main
 {
-    width: 100%;
+    width: 90%;
     min-height: calc(100vh - 320px);
 
-    display: flex;
-    justify-content: space-around;
+    display: flex;    
+    justify-content: space-evenly;
     flex-wrap: wrap;
 
-    margin: 10px auto;
+    margin: 20px auto;
 }
 
 footer
@@ -183,20 +134,52 @@ footer p
     color: #FFF;
 }
 
+.links
+{
+    width: 100%;
 
+    outline: none;
+
+    display: flex;
+}
 
 .Smile
 {
     width: fit-content;
     height: fit-content;
 
+    background-color: #FFF;
+    border: none;
     border-radius: 10px;
     -webkit-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
 
-    padding: 20px;
+    padding: 25px;
+    margin: 8px;
 
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: all 1s ease; 
+}
+
+.Smile:hover
+{
+    transform-origin: center;
+    transform: rotate(10deg);
+}
+
+.Smile:active
+{
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+}
+
+.joy
+{
+    background-color: yellow;
 }
 
 

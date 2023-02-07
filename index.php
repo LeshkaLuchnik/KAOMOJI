@@ -17,7 +17,13 @@
         ?>
     </header>
 
+<div class="links">
+    <a href="#" name="joy"></a>
+</div>
+
     <main>
+
+        <h1 id="joy">Joy</h1>
        <?php
             include_once "PHP/connect.php";
             $connect = connect();
@@ -27,10 +33,7 @@
             {  
                 foreach($result as $row)
                         {
-                            echo "<div class = 'Smile'>";
-                                echo '<p id="' . $row["ID"] . '" onclick="copy(' . $row["ID"] . ') ">' . $row["Smile"] .'</p>' ;  
-                            echo "</div>";
-                            
+                                echo "<button class = 'Smile  ". $row['Group'] ."' id='" . $row['ID'] . "' onclick='copy(". $row['ID'] .")'>" . $row['Smile'] . "</button>";
                         }
             }
        ?>
@@ -42,7 +45,6 @@
         ?>    
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="JS/script.js"></script>
+    <script src="JS/script.js" defer></script>
 </body>
 </html>
