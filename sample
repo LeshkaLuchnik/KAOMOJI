@@ -1,0 +1,13 @@
+<?php
+    include_once "PHP/connect.php";
+    $connect = connect();
+    $sql = "SELECT * FROM smiles";
+
+    if($result = $connect->query($sql))
+    {  
+        foreach($result as $row)
+                {
+                        echo "<button class = 'Smile ". $row['Group'] ."' id='" . $row['ID'] . "' onclick='copy(". $row['ID'] .")'>" . $row['Smile'] . "</button>";
+                }
+    }
+?>

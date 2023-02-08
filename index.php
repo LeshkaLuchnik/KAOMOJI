@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/mobile-style.css">
     <link rel="shortcut icon" href="IMG/icons/flaticon/ascii.png" type="image/x-icon">
 
     <title>KAOMOJI</title>
@@ -17,26 +18,60 @@
         ?>
     </header>
 
-<div class="links">
-    <a href="#" name="joy"></a>
-</div>
-
     <main>
 
-        <h1 id="joy">Joy</h1>
-       <?php
-            include_once "PHP/connect.php";
-            $connect = connect();
-            $sql = "SELECT * FROM smiles";
+        <hr>
 
-            if($result = $connect->query($sql))
+        <div class="links">
+            <?php
+                include_once "PHP/connect.php";
+
+                $connect = connect();
+                $sql_group = "SELECT * FROM kaomoji.groups";
+
+                if($result = $connect->query($sql_group))
+                {
+                    foreach($result as $row)
+                        {
+                            echo "<a href='#" . strtolower($row['Name_Eng']) . "'>" . $row['Name_Rus'] . "</a>";
+                        }
+                }
+                
+            ?>
+        </div>
+
+        <hr>
+
+        <?php
+            $connect = connect();
+            $sql_group = "SELECT * FROM kaomoji.groups";
+
+            if($result = $connect->query($sql_group))
             {  
                 foreach($result as $row)
-                        {
-                                echo "<button class = 'Smile  ". $row['Group'] ."' id='" . $row['ID'] . "' onclick='copy(". $row['ID'] .")'>" . $row['Smile'] . "</button>";
-                        }
+                    {
+                        echo "<div class='group'>";
+                        
+                            echo "<p id='" . strtolower($row['Name_Eng']) . "'>" . $row["Name_Rus"] . "</p>";        
+                            echo "<div class='Smiles'>";
+
+                                $sql_smiles = "SELECT * FROM smiles WHERE smiles.Group = lower('" . $row['Name_Eng'] . "')";
+                                
+                                if($result = $connect->query($sql_smiles))
+                                {
+                                    foreach($result as $row)
+                                    {
+                                        echo "<button class = 'Smile ". $row['Group'] ."' id='" . $row['ID'] . "' onclick='copy(". $row['ID'] .")'>" . $row['Smile'] . "</button>";
+                                    }
+                                }
+                            echo "</div>";
+
+                        echo "</div>";
+                        
+                    }
             }
-       ?>
+        ?>
+
     </main>
 
     <footer>
