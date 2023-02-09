@@ -243,6 +243,47 @@ hr
     background-color: pink;
 }
 
+.embarrassment
+{
+    background-color: #fcb83b;
+}
+
+.compassion
+{
+    background-color: #5ac3ff;
+}
+
+.discontent
+{
+    background-color: #fc4e4e;
+}
+
+.anger
+{
+    background-color: red;
+}
+
+.sadness
+{
+    background-color: #059bf8;
+}
+
+.pain
+{
+    background-color: #21adff;
+}
+
+.fear
+{
+    background-color: #791a79;
+    color: #fff;
+}
+
+.indifference
+{
+    background-color: #055af8;
+    color: #fff;
+}
 
 /* Общие CSS стили */
 
